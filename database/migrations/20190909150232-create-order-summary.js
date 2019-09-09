@@ -6,40 +6,40 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       order_id: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       order_datetime: {
-        type: Sequelize.TIME,
+        type: Sequelize.DATE
       },
       total_order_value: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.DECIMAL
       },
       average_unit_price: {
-        type: Sequelize.DECIMAL,
+        type: Sequelize.DECIMAL
       },
       distinct_unit_count: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       total_units_count: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.INTEGER
       },
       customer_state: {
-        type: Sequelize.STRING,
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE,
+        type: Sequelize.DATE
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE,
-      },
+        type: Sequelize.DATE
+      }
     });
   },
   down: (queryInterface, Sequelize) => {
     return queryInterface.dropTable('order_summaries');
-  },
+  }
 };
