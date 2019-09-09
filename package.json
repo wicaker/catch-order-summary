@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server-dev": "nodemon app.js",
     "start": "node app.js",
-    "pretest": "eslint --ignore-path .gitignore ."
+    "pretest": "eslint --ignore-path .gitignore .",
+    "undo_db": "sequelize db:migrate:undo:all",
+    "init_db": "sequelize db:migrate && sequelize db:seed:all"
   },
   "author": "",
   "license": "ISC",
