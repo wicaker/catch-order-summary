@@ -1,0 +1,26 @@
+{
+    "extends": "strongloop",
+    "rules": {
+        "no-useless-escape": 0,
+        "no-undef":0,
+        "no-unused-vars": 0,
+        "semi": [
+            "error",
+            "always"
+        ],
+        "quotes": [
+            "error",
+            "single"
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ]
+    },
+    "parserOptions": {
+        "ecmaVersion": 2017
+    },
+    "env": {
+        "es6": true
+    }
+}
