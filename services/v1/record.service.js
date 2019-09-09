@@ -55,20 +55,16 @@ module.exports = {
 
           if (newOrder.total_order_value !== 0) {
             newData.push(newOrder); // save to array newData
-            dbProcess(newOrder); // save to db
+            await dbProcess(newOrder); // save to db
           };
         } catch (err) {
           console.log(`data ${e} not found`);
         };
       });
 
-      // Process to save data object to be csv file
-      const fields = ['order_id', 'order_datetime', 'total_order_value', 'average_unit_price', 'distinct_unit_count', 'total_units_count', 'customer_state'];
-      const json2csvParser = new Parser({ fields });
-      const csv = json2csvParser.parse(newData);
-
-      await fs.writeFileSync('./documents/out.csv', csv);
-      console.log('Success create .csv file');
+      // Process to save data object to be any file
+      csvCreate(newData);
+      jsonCreate(newData);
 
     } catch (error) {
       console.log(error);
@@ -109,5 +105,32 @@ const dbProcess = async data => {
     return;
   } catch (error) {
     console.log(error);
+  };
+};
+
+// create csv file
+const csvCreate = async data => {
+  try {
+    const fields = ['order_id', 'order_datetime', 'total_order_value', 'average_unit_price', 'distinct_unit_count', 'total_units_count', 'customer_state'];
+    const json2csvParser = new Parser({ fields });
+    const csv = json2csvParser.parse(data);
+    await fs.writeFileSync('./documents/out.csv', csv);
+    console.log('Success create .csv file');
+    return;
+  } catch (error) {
+    console.log(error);
+    return;
+  };
+};
+
+// create json file
+const jsonCreate = async data => {
+  try {
+    await fs.writeFileSync('./documents/out.json', JSON.stringify(data), 'utf-8');
+    console.log('Success create .json file');
+    return;
+  } catch (error) {
+    console.log(error);
+    return;
   };
 };
