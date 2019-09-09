@@ -22,9 +22,9 @@ const summaryService = {
         .json({ data: summary });
     } catch (error) {
       if (error.errors) {
-        return res.status(400).json({ error: error.errors });
+        return res.status(500).json({ error: error.errors });
       }
-      return res.status(400).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     };
   },
   sendEmail: async(req, res) => {
@@ -45,9 +45,9 @@ const summaryService = {
       return res.status(200).json({ message: 'Summary Successfully Sent !' });
     } catch (error) {
       if (error.errors) {
-        return res.status(400).json({ error: error.errors });
+        return res.status(500).json({ error: error.errors });
       }
-      return res.status(400).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     };
   },
   fileCsv: async(req, res) => {
@@ -67,9 +67,9 @@ const summaryService = {
       });
     } catch (error) {
       if (error.errors) {
-        return res.status(400).json({ error: error.errors });
+        return res.status(500).json({ error: error.errors });
       }
-      return res.status(400).json({ error: error.message });
+      return res.status(500).json({ error: error.message });
     };
   },
 };

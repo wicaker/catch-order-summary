@@ -4,8 +4,9 @@ const app = express();
 const bodyParser = require('body-parser');
 const routers = require('./routers');
 const serviceRecord = require('./services/v1/record.service');
+const isAuth = require('./middleware/auth');
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5002;
 require('dotenv').config(); // to config .env
 
 // parse application/x-www-form-urlencoded
@@ -36,8 +37,8 @@ serviceRecord.getJson();
 app.use(
   '/api/v1',
   (req, res, next) => {
-    //   isAuth(req);
-    next();
+    isAuth(req);
+    return next();
   },
   routers.v1
 );
