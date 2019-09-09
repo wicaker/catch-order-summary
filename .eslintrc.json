@@ -1,20 +1,36 @@
 {
     "extends": "strongloop",
     "rules": {
-        "no-useless-escape": 0,
-        "no-undef":0,
-        "no-unused-vars": 0,
-        "semi": [
+        "indent": [
             "error",
-            "always"
+            2
         ],
-        "quotes": [
+        "max-len": [
             "error",
-            "single"
+            {
+                "code": 200
+            }
         ],
         "linebreak-style": [
             "error",
             "unix"
+        ],
+        "quotes": [
+            "error",
+            "single",
+            {
+                "allowTemplateLiterals": true
+            }
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-unused-vars": [
+            "error",
+            {
+                "args": "none"
+            }
         ]
     },
     "parserOptions": {
