@@ -2,8 +2,8 @@
 const express = require('express');
 const v1 = express.Router();
 
-const first = require('./first');
+const serveSummary = require('./serve-summary');
 
-v1.use('/first', first);
+v1.use('/summary', serveSummary);
 
 module.exports = v1;
