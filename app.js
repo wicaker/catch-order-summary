@@ -27,7 +27,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// API Version
+// Rest API
 app.use(
   '/api/v1',
   (req, res, next) => {
