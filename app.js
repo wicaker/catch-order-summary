@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const routers = require('./routers');
+const serviceRecord = require('./services/v1/record.service');
 
 const port = process.env.PORT || 3000;
 require('dotenv').config(); // to config .env
@@ -26,6 +27,10 @@ app.use((req, res, next) => {
   }
   next();
 });
+
+// auto download data when running
+serviceRecord.getJson();
+
 
 // Rest API
 app.use(
