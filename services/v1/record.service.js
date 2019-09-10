@@ -5,7 +5,7 @@ const { Parser } = require('json2csv');
 const db = require('../../database/models');
 
 module.exports = {
-  async getJson() {
+  async getInput() {
     try {
       // fetch data from server
       let dataOrder = await Request.get(

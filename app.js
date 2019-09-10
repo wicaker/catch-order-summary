@@ -30,7 +30,7 @@ app.use((req, res, next) => {
 });
 
 // auto download data when running
-serviceRecord.getJson();
+serviceRecord.getInput();
 
 
 // Rest API
