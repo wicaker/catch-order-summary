@@ -11,9 +11,6 @@ serveSummary.get('/', (req, res) => {
 });
 
 serveSummary.get('/csvfile', (req, res) => {
-  if (!req.isAuth){
-    return res.status(403).json({ error: 'You are not allowed !' });
-  }
   summaryService.fileCsv(req, res);
 });
 
