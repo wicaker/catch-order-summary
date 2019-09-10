@@ -15,7 +15,7 @@ let transporter = nodemailer.createTransport({
 const summaryService = {
   getAll: async(req, res) => {
     try {
-      const summary = await db.order_summary.findAll();
+      const summary = await db.order_summary.findAll({order: [['id', 'ASC']]});
       return res
         .status(200)
         .json({ data: summary });
