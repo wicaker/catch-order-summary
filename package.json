@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server-dev": "nodemon app.js",
-    "start": "node app.js",
+    "server-dev": "nodemon -r esm app.js",
+    "start": "node -r esm app.js",
     "pretest": "eslint --ignore-path .gitignore .",
     "undo_db": "sequelize db:migrate:undo:all",
     "init_db": "sequelize db:migrate && sequelize db:seed:all"
@@ -19,7 +19,9 @@
     "nodemon": "^1.19.2"
   },
   "dependencies": {
+    "apollo-server-express": "^2.9.3",
     "dotenv": "^8.1.0",
+    "esm": "^3.2.25",
     "express": "^4.17.1",
     "json2csv": "^4.5.2",
     "nodemailer": "^6.3.0",
