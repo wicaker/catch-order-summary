@@ -1,6 +1,6 @@
 const db = require('../database/models');
 
-export const typeDef = `
+const typeDefSummary = `
   extend type Query {
     getAll(limit: Int, offset: Int, orderBy: String, orderType: String): [Summary]
   }
@@ -15,7 +15,7 @@ export const typeDef = `
     customer_state: String
   }
 `;
-export const resolvers = {
+const resolversSummary = {
   Query: {
     getAll: async(parent, args, context, info) => {
       try {
@@ -31,3 +31,5 @@ export const resolvers = {
     },
   },
 };
+
+module.exports = {typeDefSummary, resolversSummary};

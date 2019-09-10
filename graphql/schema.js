@@ -1,8 +1,5 @@
 const { merge } = require('lodash');
-import {
-  typeDef as Summary,
-  resolvers as summaryResolvers,
-} from './serve-summary.graphql';
+const {typeDefSummary, resolversSummary} = require('./serve-summary.graphql');
 
 const Query = `
   type Query {
@@ -12,7 +9,7 @@ const Query = `
 
 const resolvers = {};
 
-const rootResolver = merge(resolvers, summaryResolvers);
-const typeDefs = [Query, Summary];
+const rootResolver = merge(resolvers, resolversSummary);
+const typeDefs = [Query, typeDefSummary];
 
 module.exports = { typeDefs, rootResolver };
