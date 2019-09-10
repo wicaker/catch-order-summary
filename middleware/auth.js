@@ -4,21 +4,19 @@ module.exports = async(req) => {
     const authHeader = req.headers.authorization;
     if (!authHeader) {
       req.isAuth = false;
-      return;
+      return req;
     };
-
     const token = authHeader;
     if (!token || token === '') {
       req.isAuth = false;
-      return;
+      return req;
     };
-
     if (token !== 'secret-ilove-coding') {
       req.isAuth = false;
-      return;
+      return req;
     };
     req.isAuth = true;
-    return;
+    return req;
   } catch (error) {
     console.log(error);
   }
