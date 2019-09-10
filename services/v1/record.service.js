@@ -116,7 +116,7 @@ const csvCreate = async data => {
     const csv = json2csvParser.parse(data);
     await fs.writeFileSync('./documents/out.csv', csv);
     console.log('Success create .csv file');
-    await validateCsv(); //validate csv file
+    await validateCsv(); // validate csv file
     return;
   } catch (error) {
     console.log(error);
@@ -141,16 +141,14 @@ const validateCsv = async() => {
   try {
     let reqPackage = await Request.post('http://csvlint.io/package.json', {
       form: {
-        'urls[]': `${process.env.DOMAIN_NAME}/api/v1/summary/csvfile`
-      }
-    })
-    reqPackage = JSON.parse(reqPackage)
- 
+        'urls[]': `${process.env.DOMAIN_NAME}/api/v1/summary/csvfile`,
+      },
+    });
+    reqPackage = JSON.parse(reqPackage);
     let reqValidation = await Request.get(`${reqPackage.package.url}.json`);
-    reqValidation = JSON.parse(reqValidation)
-    
+    reqValidation = JSON.parse(reqValidation);
     if (reqValidation.package.validations.length > 0) {
-      if (reqValidation.package.validations[0].state == 'valid') {
+      if (reqValidation.package.validations[0].state === 'valid') {
         console.log('csv file valid');
         return;
       }
