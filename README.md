@@ -76,6 +76,16 @@ Currently, we not using standard auth like `jwt` , etc. To authenticate every re
 In Process of request REST API, the flow like this:
 
 ![catch.flow-diagram](https://res.cloudinary.com/wicak/image/upload/v1568081143/emerhub_test.png)
+
+## GraphQl
+We also provide another way to present data besides the Rest API, which is using GraphQl. This way give us much advantage rather than using Rest API (particularly in application with huge data). There are more flexibility both backend and frontend. In backend side, we just define one end point and define few schema thats we want to provide. And in front end side, they can get data they want, rather than get all response data which is not neccessary.
+
+This screenshot below, the way to test graphql using graphql playground.
+![catch.graphql](https://res.cloudinary.com/wicak/image/upload/v1568125485/graphql-order-summary.png)
+
+To test this project, after run the server, open browser and paste `{project_domain_name}/graphql` and let's play. 
+More info : [graphql](https://graphql.org/)
+
 #
 ### I Gede Wicaksana
 [wicaker.com](https://wicaker.com)
