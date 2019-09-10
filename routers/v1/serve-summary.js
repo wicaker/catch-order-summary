@@ -1,4 +1,3 @@
-'use strict';
 const express = require('express');
 const serveSummary = express.Router();
 const summaryService = require('../../services/v1/serve-summary.service');

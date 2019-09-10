@@ -1,4 +1,3 @@
-'use strict';
 const db = require('../../database/models');
 const nodemailer = require('nodemailer');
 

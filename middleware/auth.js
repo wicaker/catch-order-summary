@@ -1,4 +1,3 @@
-'use strict';
 module.exports = async(req) => {
   try {
     const authHeader = req.headers.authorization;

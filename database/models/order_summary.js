@@ -1,4 +1,3 @@
-'use strict';
 module.exports = (sequelize, DataTypes) => {
   const order_summary = sequelize.define('order_summary', {
     order_id: DataTypes.INTEGER,

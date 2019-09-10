@@ -1,4 +1,3 @@
-'use strict';
 const express = require('express');
 const v1 = express.Router();
 

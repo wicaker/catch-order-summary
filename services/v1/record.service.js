@@ -1,4 +1,3 @@
-'use strict';
 const Request = require('request-promise');
 var fs = require('fs');
 const { Parser } = require('json2csv');
