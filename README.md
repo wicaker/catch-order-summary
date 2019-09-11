@@ -7,7 +7,8 @@ Read a data file, process each record, and produce an output file.
 1. Clone repo
 2. Install dependencies with : `npm install`
 3. Change the name of `.env-example` file to `.env`
-4. Run in development : `npm run server-dev`
+4. Running migration : `npm run init_db` or `sequelize db:migrate`
+5. Run in development : `npm run server-dev`
 
 After running the server, the apps will automatically download input and create csv file.
 
@@ -19,6 +20,7 @@ database/
     models/
     seeders/
 documents/
+graphql/
 middleware/
 routers/
     index.js
@@ -30,6 +32,7 @@ main.js
 - `config` folder used to configuration, such as config database connection, etc.
 - `datbase` folder used to migrations, models, and seeders
 - `documents` folder used to save all documents in particularly to save `output.csv`
+- `graphql` folder used to handle API via query language Graphql 
 - `middleware` folder used as middleware, like authentication, authorization, etc.
 - `routers` for routing with versioning.
 - `services` for service , like download input, create output, serve data, etc. (same with controller in MVC pattern).
